@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>九游 · 游戏产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafaf8;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1e1e1a;
+            line-height: 1.65;
+            padding: 2rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+            background: #ffffff;
+            padding: 3rem 2.5rem;
+            border-radius: 32px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02), 0 8px 28px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.2s;
+        }
+
+        @media (max-width: 560px) {
+            .page {
+                padding: 2rem 1.25rem;
+                border-radius: 20px;
+            }
+            body {
+                padding: 1.2rem 0.75rem;
+            }
+        }
+
+        h1 {
+            font-weight: 460;
+            font-size: 2.4rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.2rem;
+            color: #20201c;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #7a7a74;
+            border-left: 3px solid #d4d4cc;
+            padding-left: 1rem;
+            margin: 0.5rem 0 2.2rem 0;
+            font-weight: 370;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 440;
+            margin: 2.2rem 0 0.8rem 0;
+            color: #2b2b26;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid #ebebe4;
+            padding-bottom: 0.4rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 450;
+            margin: 1.6rem 0 0.4rem 0;
+            color: #3b3b34;
+        }
+
+        p {
+            margin-bottom: 1.1rem;
+            font-size: 0.98rem;
+            color: #2c2c27;
+        }
+
+        .intro-highlight {
+            font-size: 1.08rem;
+            background: #f4f4ef;
+            padding: 1.2rem 1.4rem;
+            border-radius: 20px;
+            margin: 1.6rem 0;
+            color: #1f1f1a;
+        }
+
+        ul {
+            margin: 0.8rem 0 1.6rem 1.2rem;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: 0.7rem;
+            font-size: 0.97rem;
+            color: #2c2c27;
+        }
+
+        li::before {
+            content: "·";
+            position: absolute;
+            left: 0.1rem;
+            color: #8b8b80;
+            font-weight: 600;
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.8rem 0 2rem 0;
+        }
+
+        .card {
+            flex: 1 1 180px;
+            background: #f9f9f5;
+            padding: 1.2rem 1.2rem 1rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid #ecece5;
+            transition: background 0.15s;
+        }
+
+        .card h4 {
+            font-weight: 450;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            color: #24241f;
+        }
+
+        .card p {
+            font-size: 0.89rem;
+            color: #50504a;
+            margin-bottom: 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1.4rem;
+        }
+
+        .faq-q {
+            font-weight: 450;
+            margin-bottom: 0.2rem;
+            color: #2b2b26;
+        }
+
+        .faq-a {
+            font-size: 0.92rem;
+            color: #55554e;
+            padding-left: 0.6rem;
+            border-left: 2px solid #deded6;
+            padding-left: 0.9rem;
+            margin-top: 0.15rem;
+        }
+
+        a {
+            color: #1f5a3e;
+            text-decoration: none;
+            border-bottom: 1px solid #c6dacd;
+            transition: border-color 0.1s, color 0.1s;
+        }
+
+        a:hover {
+            color: #13452e;
+            border-bottom-color: #7fa587;
+        }
+
+        .footnote {
+            margin-top: 2.6rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e3e3db;
+            font-size: 0.85rem;
+            color: #7a7a70;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .tag {
+            background: #eaeae2;
+            padding: 0.1rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            color: #4b4b42;
+            display: inline-block;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eaeae2;
+            margin: 1.6rem 0;
+        }
+
+        .note {
+            background: #f5f5f0;
+            padding: 0.8rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.88rem;
+            color: #3f3f38;
+            display: inline-block;
+        }
+
+        strong {
+            font-weight: 500;
+            color: #1d2f24;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>九游</h1>
+        <div class="subtitle">一份关于游戏产品 &amp; 内容聚合的简要说明</div>
+
+        <!-- 摘要 / 叙述引入 -->
+        <p>
+            在移动端与桌面端游戏不断融合的几年里，<a href="https://deta-9games.com.cn">九游</a> 逐渐成为一类以多样类型、轻量体验和社区反馈为特点的游戏集合。它并不追求宏大叙事，而是更关注游戏本身的可玩性与节奏——无论是短暂闲暇，还是较长的沉浸时段，都能找到适合的入口。
+        </p>
+
+        <div class="intro-highlight">
+            “游戏不必是负担，也不该是噪音。” 九游的内容方向倾向于提供清晰的选择路径与克制的界面，将注意力还给玩法本身。
+        </div>
+
+        <!-- 亮点卡片 -->
+        <h2>产品亮点</h2>
+        <div class="card-container">
+            <div class="card">
+                <h4>类型覆盖</h4>
+                <p>从解谜、模拟到轻度策略，覆盖十种以上常见品类，避免单一重复。</p>
+            </div>
+            <div class="card">
+                <h4>低门槛进入</h4>
+                <p>无需复杂注册，大部分内容可直接试玩，节奏由自己控制。</p>
+            </div>
+            <div class="card">
+                <h4>定期轮换</h4>
+                <p>内容库保持更新与轮换，减少陈旧感，同时保留经典选项。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议 -->
+        <h2>使用建议</h2>
+        <p>
+            如果你偏好探索而非跟随任务线，可以按类型或标签浏览；如果时间零碎，建议从单局时长较短的作品开始。多数游戏内不含强制推送或内购弹窗，可以更专注地体验核心机制。对于想要深入了解某一款作品的人来说，站内会提供基本的玩法说明与风格简介——但不替代完整的游戏内教程。
+        </p>
+        <p>
+            另一方面，<a href="https://deta-9games.com.cn">九游</a> 的内容组织方式也适合作为游戏灵感的轻量收集：在不确定想玩什么时，随意点开一个类别，往往比反复横跳于列表更有效。
+        </p>
+
+        <!-- 可信但克制的访问说明 -->
+        <h2>访问与边界</h2>
+        <p>
+            该平台以内容聚合与展示为主，不要求用户建立账户，也不收集不必要的个人信息。游戏来源标注清晰，部分内容为独立开发或经授权收录。链接指向的页面会保持基本的无障碍浏览与稳定的加载速度。
+        </p>
+        <p>
+            需要留意的是，游戏内容可能包含轻微的幻想元素或主题表达，但整体保持在常见分级范围内。所有收录作品均经过基础适配测试，但不同设备的表现可能存在差异——建议在浏览前确认网络环境稳定。
+        </p>
+
+        <hr>
+
+        <!-- FAQ 摘要 -->
+        <h2>常见疑问摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">是否需要付费？</div>
+            <div class="faq-a">绝大多数内容免费访问，少数标注作品可能包含扩展内容链接，但不会强制付费。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">可以在手机上使用吗？</div>
+            <div class="faq-a">页面针对窄屏与宽屏均做了样式适配，手机浏览器可直接打开；部分游戏需要触摸或键盘操作，具体取决于作品本身。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">内容多久更新一次？</div>
+            <div class="faq-a">通常每两周会有一次小型轮换，每月有一次较大幅度的内容调整，具体以实际页面为准。</div>
+        </div>
+
+        <div style="margin-top: 1.8rem;">
+            <span class="note">☕ 如果对具体类型有偏好，可以直接在站内导航中筛选。</span>
+        </div>
+
+        <!-- 结尾 footer -->
+        <div class="footnote">
+            <span>九游 · 一份克制的游戏说明</span>
+            <span class="tag">v1.0 / 内容参考</span>
+        </div>
+    </div>
+</body>
+</html>
